@@ -19,6 +19,8 @@ void Game::Reset()
 	ball.color = ConsoleColor::Cyan;
 	ResetBall();
 
+	brick.clear();
+
 	// TODO #2 - Add this brick and 4 more bricks to the vector
 	for (int i = 0; i < 5; i++)
 	{
@@ -28,7 +30,7 @@ void Game::Reset()
 		newBrick.x_position = i * (Console::WindowWidth()/5);
 		newBrick.y_position = 5;
 		newBrick.doubleThick = true;
-		newBrick.color = ConsoleColor::DarkGreen;
+		newBrick.color = ConsoleColor::DarkCyan;
 
 		brick.push_back(newBrick);
 	}
@@ -129,6 +131,7 @@ void Game::CheckCollision()
 			}
 		}
 	}
+
 	if (paddle.Contains(ball.x_position + ball.x_velocity, ball.y_velocity + ball.y_position))
 	{
 		ball.y_velocity *= -1;
