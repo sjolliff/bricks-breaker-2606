@@ -25,7 +25,7 @@ void Game::Reset()
 		Box newBrick;
 		newBrick.width = 10;
 		newBrick.height = 2;
-		newBrick.x_position = 0;
+		newBrick.x_position = i * 20;
 		newBrick.y_position = 5;
 		newBrick.doubleThick = true;
 		newBrick.color = ConsoleColor::DarkGreen;
