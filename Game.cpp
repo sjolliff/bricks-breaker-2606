@@ -25,7 +25,7 @@ void Game::Reset()
 		Box newBrick;
 		newBrick.width = 10;
 		newBrick.height = 2;
-		newBrick.x_position = i * 20;
+		newBrick.x_position = i * (Console::WindowWidth()/5);
 		newBrick.y_position = 5;
 		newBrick.doubleThick = true;
 		newBrick.color = ConsoleColor::DarkGreen;
@@ -115,13 +115,8 @@ void Game::CheckCollision()
 			}
 		}
 	}
-
-	
-
 	if (paddle.Contains(ball.x_position + ball.x_velocity, ball.y_velocity + ball.y_position))
 	{
 		ball.y_velocity *= -1;
 	}
-
-	
 }
