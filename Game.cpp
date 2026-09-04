@@ -84,13 +84,13 @@ void Game::Render() const
 	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
 	if (brick.empty())
 	{
-		Console::WordWrap(5, 5, 15, "You win! Press 'R' to play again.");
+		Console::WordWrap(20, 20, 45, "You win! Press 'R' to play again.");
 	}
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
 	if (ball.y_position >= Console::WindowHeight())
 	{
-		Console::WordWrap(5, 5, 15, "You lose! Press 'R' to play again.");
+		Console::WordWrap(20, 20, 45, "You lose! Press 'R' to play again.");
 	}
 
 
