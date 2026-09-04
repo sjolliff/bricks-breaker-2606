@@ -63,6 +63,21 @@ bool Game::Update()
 
 	ball.Update();
 	CheckCollision();
+
+	//Pause Ball
+	
+	// TODO #6 - If no bricks remain, pause ball and display (render) victory text with R to reset
+	if (brick.empty())
+	{
+		ball.moving = false;
+	}
+
+	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
+	if (ball.y_position >= Console::WindowHeight())
+	{
+		ball.moving = false;
+	}
+
 	return true;
 }
 
@@ -92,7 +107,6 @@ void Game::Render() const
 	{
 		Console::WordWrap(20, 20, 45, "You lose! Press 'R' to play again.");
 	}
-
 
 	Console::Lock(false);
 }
